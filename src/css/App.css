@@ -1,0 +1,11 @@
+.coin-desk-window{
+    height: 70vh;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    box-shadow: 0px -2px 5px lightblue inset;
+}
+
+.coin-desk-window::-webkit-scrollbar {
+    display: none;
+}
