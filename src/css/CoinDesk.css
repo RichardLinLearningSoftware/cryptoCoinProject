@@ -18,6 +18,12 @@
     color: white;
     box-shadow: 2px 2px 5px #3933486f;
     align-items: center;
+    transition: 0.1s;
+}
+
+.coin-container:hover{
+    transform: scaleY(1.05);
+    background-color: #5c5c78;
 }
 .coin-name-logo-container{
     display: flex;
@@ -26,7 +32,7 @@
     align-items: center;
 }
 
-.coin-name-logo-container> h2{
+.coin-container-column-container> h2{
     font-size: 1rem;
     font-weight: 600;
     color: #dcddf8;
@@ -41,11 +47,33 @@
     outline-color: #777798;
     outline-style: solid;
 }
-.coin-container > p{
+.coin-container-column-container > p{
     color: #BABCE2;
 }
-.coin-container > p::before{
+.coin-container-column-container > p::before{
     font-size: 1.1rem;
     color: #dcddf8;
     content: "$";
+}
+
+.coin-container-column-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.favorite-button{
+    width: 1.2vw;
+    height: 1.2vw;
+    background-color: gold;
+    border-radius: 0.1vw;
+    border-style: none;
+    transform: rotate(45deg);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.favorite-button:hover{
+    background-color: goldenrod;
+    scale: 1.1;
+    transform: rotate(135deg);
 }
