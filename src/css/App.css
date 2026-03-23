@@ -5,7 +5,7 @@
     scrollbar-width: none;
     width: fit-content;
     position: relative;
-    border-radius: 10px;
+    border-radius: 3px;
 }
 
 .coin-desk-window::-webkit-scrollbar {
@@ -29,10 +29,10 @@
     box-sizing: border-box;
     padding: 10px;
     width: clamp(350px, 35vw, 350px);
-    border-radius: 10px;
+    border-radius: 3px;
     background-color: #6f6f8f29;
     color: white;
-    outline-width: 2px;
+    outline-width: 1.5px;
     outline-style: solid;
     outline-color: #ffffff66;
     border-style: none;
@@ -59,7 +59,7 @@
     padding: 15px;
     background-color: #505069;
     width: 100%;
-    border-radius: 15px;
+    border-radius: 3px;
 }
 
 .crypto-row-container{
@@ -71,15 +71,34 @@
 
 .crypto-column-cotainer{
     width: 49.5%;
-    background-color: red;
-    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .description-container{
-    border-radius: 15px;
+    border-radius: 3px;
     width: 49.5%;
     height: 10vh;
     box-sizing: border-box;
     padding: 15px;
     background-color: #505069;
+}
+
+.crypto-profile-container{
+    border-radius: 3px;
+    height: 46.5vh;
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: #505069;
+    box-shadow: 2px 2px 5px #3933486f;
+}
+
+.global-circle-graph{
+    border-radius: 3px;
+    height: 46.5vh;
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: #505069;
+    box-shadow: 2px 2px 5px #3933486f;
 }

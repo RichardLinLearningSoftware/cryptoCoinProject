@@ -12,7 +12,7 @@
     padding: 15px 20px;
     box-sizing: border-box;
     background-color: #505069;
-    border-radius: 5px;
+    border-radius: 3px;
     justify-content: space-between;
     width: clamp(350px, 35vw, 350px);
     color: white;
@@ -42,7 +42,7 @@
     width: clamp(20px, 3vw, 80px);
     height: fit-content;
     background-color: #656585;
-    border-radius: 5px;
+    border-radius: 3px;
     outline-width: 2px;
     outline-color: #777798;
     outline-style: solid;
