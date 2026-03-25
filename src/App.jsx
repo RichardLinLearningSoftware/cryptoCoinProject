@@ -58,9 +58,6 @@ function App() {
             </div>
           </div>
         </div>
-
-        <div className='crypto-row-container'>
-          <div className='crypto-column-cotainer'>
             <div className='card-container'>
               <div className='card'>
                 <div className='global-circle-graph'>
@@ -71,17 +68,6 @@ function App() {
                 </div>
               </div>
             </div>
-            <div className='card-container'>
-              <div className='card'>
-                <div className='crypto-profile-container'>
-                  wow
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className='description-container'>
-          </div>
-        </div>
      </div>
     </>
   );

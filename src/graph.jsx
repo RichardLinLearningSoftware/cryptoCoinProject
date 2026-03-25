@@ -49,7 +49,8 @@ function PieChart() {
                 align: 'start',
                 maxWidth: 500,
                 labels: {
-                    boxWidth: 10,
+                    boxWidth: 20,
+                    boxHeight: 20,
                     color: '#dcddf8'
                 }
             },
