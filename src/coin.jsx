@@ -8,12 +8,12 @@ function CoinDesk({ search }) {
       .then(response => response.json())
       .then(jsonResponse => {
         setCoinDesk(jsonResponse);
+        console.log(jsonResponse.Data.LIST)
       })
   }, []);
 
   function createCoinContainer() {
     if (!coinDesk) return;
-
     return coinDesk.Data.LIST
       .filter((coin) =>
         coin.NAME.toLowerCase().includes(search.toLowerCase())
@@ -25,7 +25,14 @@ function CoinDesk({ search }) {
             
             <div className='coin-container-column-container'>
               <h2>{coin.NAME}</h2>
-              <p>{Math.round(coin.PRICE_USD * 100) / 100}</p>
+
+              <div className='coin-value-growth-row-container'>
+                <p>{Math.round(coin.PRICE_USD * 100) / 100}</p>
+                
+                <div className={`coin-growth ${coin.SPOT_MOVING_24_HOUR_CHANGE_PERCENTAGE_CONVERSION >= 0 ? 'positive-growth' : 'negative-growth'}`}>
+                  {Math.round(coin.SPOT_MOVING_24_HOUR_CHANGE_PERCENTAGE_CONVERSION * 100) / 100}%
+                </div>
+              </div>
             </div>
 
           </div>

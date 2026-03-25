@@ -32,6 +32,12 @@
     align-items: center;
 }
 
+.coin-container-column-container{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
 .coin-container-column-container> h2{
     font-size: 1rem;
     font-weight: 600;
@@ -47,13 +53,37 @@
     outline-color: #777798;
     outline-style: solid;
 }
-.coin-container-column-container > p{
+.coin-value-growth-row-container > p{
     color: #BABCE2;
 }
-.coin-container-column-container > p::before{
+.coin-value-growth-row-container > p::before{
     font-size: 1.1rem;
     color: #dcddf8;
     content: "$";
+}
+
+.coin-value-growth-row-container{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.coin-growth{
+    background-color: #a8a8a86f;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+.positive-growth{
+    background-color: #45a963b3;
+    color: #99fcb7;
+}
+.negative-growth{
+    background-color: #a94545b3;
+    color: #fc9999;
 }
 
 .coin-container-column-container{
@@ -62,8 +92,8 @@
 }
 
 .favorite-button{
-    width: 1.2vw;
-    height: 1.2vw;
+    width: 12px;
+    height: 12px;
     background-color: gold;
     border-radius: 0.1vw;
     border-style: none;
