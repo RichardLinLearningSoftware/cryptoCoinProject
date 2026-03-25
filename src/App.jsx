@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import CoinDesk from './coin.jsx';
+import PieChart from './graph.jsx';
 import { Route, Routes } from 'react-router';
 import './css/App.css';
 
@@ -52,9 +53,7 @@ function App() {
           <div className='card-container'>
             <div className='card'>
               <div className='coin-desk-window'>
-                <Routes>
-                  <Route path="/" element={<CoinDesk search={search}/>}/>
-                </Routes>
+                <CoinDesk search={search}/>
               </div>
             </div>
           </div>
@@ -62,8 +61,23 @@ function App() {
 
         <div className='crypto-row-container'>
           <div className='crypto-column-cotainer'>
-            <div className='global-circle-graph'></div>
-            <div className='crypto-profile-container'></div>
+            <div className='card-container'>
+              <div className='card'>
+                <div className='global-circle-graph'>
+                  <h2>Top 10 crypto coins</h2>
+                  <div className='pie-chart-container'>
+                    <PieChart/>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='card-container'>
+              <div className='card'>
+                <div className='crypto-profile-container'>
+                  wow
+                </div>
+              </div>
+            </div>
           </div>
           <div className='description-container'>
           </div>

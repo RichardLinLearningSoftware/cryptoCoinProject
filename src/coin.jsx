@@ -13,7 +13,7 @@ function CoinDesk({ search }) {
   }, []);
 
   function createCoinContainer() {
-    if (!coinDesk) return;
+    if (!coinDesk) return <p>Loading list...</p>;
     return coinDesk.Data.LIST
       .filter((coin) =>
         coin.NAME.toLowerCase().includes(search.toLowerCase())
