@@ -16,7 +16,6 @@ function PieChart() {
         .then(response => response.json())
         .then(jsonResponse => {
             setCoinDesk(jsonResponse);
-            console.log(jsonResponse.Data.LIST)
         })
     }, []);
   

@@ -8,7 +8,6 @@ function CoinDesk({ search }) {
       .then(response => response.json())
       .then(jsonResponse => {
         setCoinDesk(jsonResponse);
-        console.log(jsonResponse.Data.LIST)
       })
   }, []);
 
