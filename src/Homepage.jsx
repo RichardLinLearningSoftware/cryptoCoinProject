@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
-import CoinDesk from './coin.jsx';
-import PieChart from './graph.jsx';
-import './css/App.css';
+import CoinDesk, { PieChart } from './Content.jsx';
 
 function HomePage() {
   useEffect(() => {
