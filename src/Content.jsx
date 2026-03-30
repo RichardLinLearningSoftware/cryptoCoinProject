@@ -7,9 +7,12 @@ import {
 import { Pie } from 'react-chartjs-2';
 import { useEffect, useState } from 'react';
 import './css/CoinDesk.css';
+import { useNavigate } from "react-router-dom";
+
 function CoinDesk({ search }) {
   const [coinDesk, setCoinDesk] = useState();
-
+  const navigate = useNavigate();
+  
   useEffect(() => {
     fetch("https://data-api.coindesk.com/asset/v1/top/list?page=1&page_size=100&sort_by=CIRCULATING_MKT_CAP_USD&sort_direction=DESC&groups=ID,BASIC,SUPPLY,PRICE,MKT_CAP,VOLUME,CHANGE,TOPLIST_RANK&toplist_quote_asset=USD")
       .then(response => response.json())
@@ -18,6 +21,10 @@ function CoinDesk({ search }) {
       })
   }, []);
 
+  function ClickCoin(coin) {
+    navigate(`/coin/${coin.NAME}`);
+  }
+
   function createCoinContainer() {
     if (!coinDesk) return <p>Loading list...</p>;
     return coinDesk.Data.LIST
@@ -25,7 +32,7 @@ function CoinDesk({ search }) {
         coin.NAME.toLowerCase().includes(search.toLowerCase())
       )
       .map((coin, i) => (
-        <div key={i} className='coin-container'>
+        <div key={i} className='coin-container' onClick={() => ClickCoin(coin)}>          
           <div className='coin-name-logo-container'>
             <img src={coin.LOGO_URL} alt={coin.NAME}/>
             

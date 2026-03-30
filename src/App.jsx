@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router';
 import { BrowserRouter } from 'react-router';
-import HomePage from './Homepage.jsx';
+import HomePage, { CoinPage } from './Pages.jsx';
 import './css/App.css';
 
 function App() {
@@ -10,6 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
 
+        <Route path="/coin/coinId" element={<CoinPage />} />
       </Routes>
     </BrowserRouter>
   );

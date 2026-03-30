@@ -82,3 +82,13 @@ function HomePage() {
 }
 
 export default HomePage;
+
+function CoinPage() {
+  return (
+    <>
+        
+    </>
+  );
+}
+
+export { CoinPage };
