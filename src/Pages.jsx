@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import CoinDesk, { PieChart } from './Content.jsx';
+import { useParams } from "react-router-dom";
 
 function HomePage() {
   useEffect(() => {
@@ -37,8 +38,7 @@ function HomePage() {
    const [search, setSearch] = useState("");
 
   return (
-    <>
-     <div className='container-row'>
+    <div className='container-row'>
         <div className='container-column'>
           <input 
             className='search-bar' 
@@ -77,18 +77,29 @@ function HomePage() {
                 </div>
             </div>
      </div>
-    </>
   );
 }
 
 export default HomePage;
 
 function CoinPage() {
-  return (
-    <>
-        
-    </>
-  );
+  const { coinName } = useParams(); 
+  const [coinDesk, setCoinDesk] = useState();
+  
+  useEffect(() => {
+    fetch("https://data-api.coindesk.com/asset/v1/top/list?page=1&page_size=100&sort_by=CIRCULATING_MKT_CAP_USD&sort_direction=DESC&groups=ID,BASIC,SUPPLY,PRICE,MKT_CAP,VOLUME,CHANGE,TOPLIST_RANK&toplist_quote_asset=USD")
+      .then(response => response.json())
+      .then(jsonResponse => {
+        const findCoin = jsonResponse.Data.LIST.find(
+            (c) => c.NAME === coinName
+          );
+        setCoinDesk(findCoin);
+      })
+  }, [coinName]);
+
+  if(!coinDesk) return <p>Loading list...</p>;
+    console.log(coinName);
+    console.log(coinDesk.PRICE_USD);
 }
 
 export { CoinPage };

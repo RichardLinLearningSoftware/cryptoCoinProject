@@ -8,9 +8,11 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <>
+          <Route path="/" element={<HomePage />} />
 
-        <Route path="/coin/coinId" element={<CoinPage />} />
+          <Route path="/:coinName" element={<CoinPage />} />
+        </>
       </Routes>
     </BrowserRouter>
   );

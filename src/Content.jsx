@@ -22,7 +22,7 @@ function CoinDesk({ search }) {
   }, []);
 
   function ClickCoin(coin) {
-    navigate(`/coin/${coin.NAME}`);
+    navigate(`/${coin.NAME}`);
   }
 
   function createCoinContainer() {
