@@ -32,8 +32,8 @@ function CoinDesk({ search }) {
         coin.NAME.toLowerCase().includes(search.toLowerCase())
       )
       .map((coin, i) => (
-        <div key={i} className='coin-container' onClick={() => ClickCoin(coin)}>          
-          <div className='coin-name-logo-container'>
+        <div key={i} className='coin-container'>          
+          <div className='coin-name-logo-container' onClick={() => ClickCoin(coin)} >
             <img src={coin.LOGO_URL} alt={coin.NAME}/>
             
             <div className='coin-container-column-container'>

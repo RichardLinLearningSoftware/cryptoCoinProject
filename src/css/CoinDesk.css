@@ -5,7 +5,6 @@
 }
 
 .coin-container{
-    cursor: pointer;
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: row;
@@ -26,10 +25,13 @@
     background-color: #5c5c78;
 }
 .coin-name-logo-container{
+    cursor: pointer;
     display: flex;
     flex-direction: row;
     gap: 1.5vw;
     align-items: center;
+    box-sizing: border-box;
+    width: 90%;
 }
 
 .coin-container-column-container{
@@ -92,8 +94,8 @@
 }
 
 .favorite-button{
-    width: 12px;
-    height: 12px;
+    width: 16px;
+    height: 16px;
     background-color: gold;
     border-radius: 0.1vw;
     border-style: none;

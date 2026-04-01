@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router';
 import { BrowserRouter } from 'react-router';
 import HomePage, { CoinPage } from './Pages.jsx';
