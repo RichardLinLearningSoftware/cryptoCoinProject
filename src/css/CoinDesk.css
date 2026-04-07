@@ -103,8 +103,27 @@
     cursor: pointer;
     transition: 0.5s;
 }
-
 .favorite-button:hover{
+    background-color: goldenrod;
+    scale: 1.1;
+    transform: rotate(135deg);
+}
+
+.unfavorite-button{
+    width: 16px;
+    height: 16px;
+    background-color: #505069;
+    border-color: #777798;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 0.1vw;
+    transform: rotate(45deg);
+    cursor: pointer;
+    transition: 0.5s;
+}
+.unfavorite-button:hover{
+    border-color: goldenrod;
+    border-width: 0px;
     background-color: goldenrod;
     scale: 1.1;
     transform: rotate(135deg);

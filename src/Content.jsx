@@ -12,14 +12,34 @@ import { useNavigate } from "react-router-dom";
 function CoinDesk({ search }) {
   const [coinDesk, setCoinDesk] = useState();
   const navigate = useNavigate();
-  
+  const [favorites, setFavorites] = useState([]);
+
+  function toggleFavorite(coinName) {
+    setFavorites((targetCoin) => {
+      if (targetCoin.includes(coinName)) {
+        return targetCoin.filter(name => name !== coinName);
+      } else {
+        return [...targetCoin, coinName];
+      }
+    });
+  }
+
   useEffect(() => {
     fetch("https://data-api.coindesk.com/asset/v1/top/list?page=1&page_size=100&sort_by=CIRCULATING_MKT_CAP_USD&sort_direction=DESC&groups=ID,BASIC,SUPPLY,PRICE,MKT_CAP,VOLUME,CHANGE,TOPLIST_RANK&toplist_quote_asset=USD")
-      .then(response => response.json())
-      .then(jsonResponse => {
-        setCoinDesk(jsonResponse);
-      })
+    .then(response => response.json())
+    .then(jsonResponse => {
+      setCoinDesk(jsonResponse);
+    })
+
+    const savedFavorites = JSON.parse(localStorage.getItem("favorites"));
+    if (savedFavorites) {
+      setFavorites(savedFavorites);
+    }
   }, []);
+  
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  }, [favorites]);
 
   function ClickCoin(coin) {
     navigate(`/${coin.NAME}`);
@@ -50,7 +70,10 @@ function CoinDesk({ search }) {
 
           </div>
 
-          <button className='favorite-button'></button>
+          <button
+            onClick={() => toggleFavorite(coin.NAME)}
+            className={favorites.includes(coin.NAME) ? "favorite-button" : "unfavorite-button"}>
+          </button>
         </div>
       ));
   }
