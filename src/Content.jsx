@@ -17,8 +17,10 @@ function CoinDesk({ search }) {
   function toggleFavorite(coinName) {
     setFavorites((targetCoin) => {
       if (targetCoin.includes(coinName)) {
+        alert("Unfavorited " + coinName);
         return targetCoin.filter(name => name !== coinName);
       } else {
+        alert("Favorited " + coinName);
         return [...targetCoin, coinName];
       }
     });
@@ -36,7 +38,7 @@ function CoinDesk({ search }) {
       setFavorites(savedFavorites);
     }
   }, []);
-  
+
   useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
   }, [favorites]);
@@ -51,6 +53,14 @@ function CoinDesk({ search }) {
       .filter((coin) =>
         coin.NAME.toLowerCase().includes(search.toLowerCase())
       )
+      .sort((x, y) => {
+        const xFav = favorites.includes(x.NAME);
+        const yFav = favorites.includes(y.NAME);
+
+        if (yFav === xFav) return 0;     // keep original order
+        if (xFav) return -1;             // a comes first
+        return 1;                        // b comes first
+      })
       .map((coin, i) => (
         <div key={i} className='coin-container'>          
           <div className='coin-name-logo-container' onClick={() => ClickCoin(coin)} >
