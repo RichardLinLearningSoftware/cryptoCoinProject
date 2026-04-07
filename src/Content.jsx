@@ -13,14 +13,26 @@ function CoinDesk({ search }) {
   const [coinDesk, setCoinDesk] = useState();
   const navigate = useNavigate();
   const [favorites, setFavorites] = useState([]);
+  let messageBox = document.getElementById("messageBox");
+
+  function showMessage(text) {
+    messageBox.classList.remove("message-box-animation");
+    void messageBox.offsetWidth;
+    messageBox.classList.add("message-box-animation");
+    messageBox.textContent = text;
+  }
 
   function toggleFavorite(coinName) {
     setFavorites((targetCoin) => {
       if (targetCoin.includes(coinName)) {
-        alert("Unfavorited " + coinName);
+        messageBox.style.background = "#9e3737e2";
+        messageBox.style.color = "#fc9999";
+        showMessage("Unfavorited " + '"' + coinName + '"');
         return targetCoin.filter(name => name !== coinName);
       } else {
-        alert("Favorited " + coinName);
+        messageBox.style.background = "#3aa75bef";
+        messageBox.style.color = "#99fcb7";
+        showMessage("Favorited " + '"' + coinName + '"');
         return [...targetCoin, coinName];
       }
     });

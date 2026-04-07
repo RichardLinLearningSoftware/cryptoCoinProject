@@ -40,6 +40,10 @@ function HomePage() {
 
   return (
     <div className='container-row'>
+        <div id='messageBox' className='message-box'>
+          Favorited "Stellar hastagcoin longname Stellar hastagcoin longname"
+        </div>
+
         <div className='container-column'>
           <input 
             className='search-bar' 

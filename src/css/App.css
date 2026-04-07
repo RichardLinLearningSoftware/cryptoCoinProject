@@ -82,6 +82,34 @@
     flex-direction: column;
 }
 
+.message-box{
+    box-sizing: border-box;
+    top: -10vh;
+    height: 10vh;
+    z-index: 5;
+    position: absolute;
+    padding: 20px;
+    background-color: #3aa75bef;
+    color: #99fcb7;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    pointer-events: none;
+    transition: top 2.5s;
+}
+
+.message-box-animation{
+    animation-name: messageBoxAnimation;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes messageBoxAnimation {
+  0%   {top: -10vh;}
+  33%  {top: 0;}
+  66%  {top: 0;}
+  100% {top: -10vh;}
+}
+
 .test{
     background-color: rebeccapurple;
     cursor: pointer;
