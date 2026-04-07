@@ -109,7 +109,8 @@ function CoinPage() {
 
   if(!coinDesk) return <p>Loading list...</p>;
     return(
-      <div className='card-container' onClick={() => ReturnToHome()}>
+      <div className='card-container'>
+        <button className='return-home-button' onClick={() => ReturnToHome()}>Return to homepage</button>
         <div className='card'>
           <div className='test'>
             <h2>{coinDesk.NAME}</h2>

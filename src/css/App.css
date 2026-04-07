@@ -110,7 +110,17 @@
   100% {top: -10vh;}
 }
 
+.return-home-button{
+    background-color: #ffffff00;
+    border-style: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.5s;
+}
+.return-home-button:hover{
+    scale: 1.05;
+}
+
 .test{
     background-color: rebeccapurple;
-    cursor: pointer;
 }
