@@ -12,7 +12,12 @@ import { useNavigate } from "react-router-dom";
 function CoinDesk({ search }) {
   const [coinDesk, setCoinDesk] = useState();
   const navigate = useNavigate();
-  const [favorites, setFavorites] = useState([]);
+
+  const [favorites, setFavorites] = useState(() => {
+    const stored = localStorage.getItem("favorites");
+    return stored ? JSON.parse(stored) : [];
+  });
+
   let messageBox = document.getElementById("messageBox");
 
   function showMessage(text) {
